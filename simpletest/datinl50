@@ -1,0 +1,27 @@
+TST: compute wall forces onlyDrops flowing out of nozzle, opening radius=0.5
+50.m
+
+WALL  (Radius at opening set to 1/2)
+200   = ntop      ( n <= 1000 )
+50   =m  (points on back)
+   7   = beta (in degrees)
+  6.0 6.5   = Lw 
+
+DROP1
+   50       = ns1      ( n <= 1000 )
+   .95      = rad1
+   -4  -4.5  = y01 (center of drop)
+DROP2
+     100       = ns2      ( n <= 1000 )
+    .6       = rad2
+   -4        = y02 (center of drop)
+
+   1  = lam1
+   1  = lam2
+  0.01 = cap1  uinf*mu1/gam1  uinf*.02/9 ?
+  0.01 = cap2  uinf*mu2/gam2  uinf*.01/31 ?
+
+ 0.01 0.025    = delt
+ 300.0      = tmax
+40000      = kmax
+ 0.25      = deltprint

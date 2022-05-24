@@ -1,0 +1,5 @@
+TST: compute us,ud induced by sphere on a grid
+100r4tot.m
+    100   = ns1      ( n <= 1000 )
+   .95    = rad1
+   -4     = y01 (center of drop)

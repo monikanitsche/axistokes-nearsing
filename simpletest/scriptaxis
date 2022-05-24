@@ -1,0 +1,6 @@
+make testaxis.out
+testaxis.out < datinl100 > dataxism100sh.m
+testaxis.out < datinl200 > dataxism200sh.m
+testaxis.out < datinl400 > dataxism400sh.m
+testaxis.out < datinl800 > dataxism800sh.m
+testaxis.out < datinl1600 > dataxism1600sh.m

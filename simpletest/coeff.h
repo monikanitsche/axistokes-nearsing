@@ -1,0 +1,16 @@
+      MODE e3,e4,e5,r2k5,logr2k,log2,ones(0:6),r2,cmsq,dsq,
+     +    m,logm,x02,x03,x04,x05,
+     +    xk2,xk3,xk4,xk5,xk6,xik2,xik3,xik4,
+     +    ir(0:6),ir3(0:6),ir5(0:6), 
+     +    irx(0:6),ir3x(0:6),ir5x(0:6), 
+     +    x1(0:6),x2(0:6),x3(0:6),x4(0:6),x5(0:6),
+     +    a1(0:6),a2(0:6),a3(0:6),a4(0:6),a5(0:6),
+     +    b1(0:6),b2(0:6),b3(0:6),b4(0:6),b5(0:6),b6(0:6),
+     +    ab1(0:6),ab2(0:6),ab3(0:6),ab4(0:6),
+     +    a2b(0:6),a2b2(0:6)
+      common/coeff/e3,e4,e5,r2k5,logr2k,log2,ones,r2,cmsq,dsq,
+     +    m,logm,x02,x03,x04,x05,
+     +    xk2,xk3,xk4,xk5,xk6,xik2,xik3,xik4,
+     +    ir,ir3,ir5,irx,ir3x,ir5x, 
+     +    x1,x2,x3,x4,x5, a1,a2,a3,a4,a5, b1,b2,b3,b4,b5,b6,
+     +    ab1,ab2,ab3,ab4, a2b,a2b2

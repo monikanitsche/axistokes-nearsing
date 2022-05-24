@@ -1,0 +1,202 @@
+SUBROUTINES
+==========
+drivergrid.F :
+    sets interface (sphere) and sample densities 
+    sets grid on which to compute int Q, int M 
+    opens output files
+    CALLS
+      compxy:      computes Cartesian coords of interface 
+                   given arc-theta coords
+      compderivxy: computes derivatives of interface, in derivs1.h
+                   needed both by IntQ and IntM
+      init:        sets grid parameters
+      Intm11:      computes single layer integrals on grid
+      IntQs:       computes double layer integrals on grid
+
+IntQs: params.h, derivs1.h
+    computes integrals on grid and prints final values 
+    (1) computes T_6[Q]
+    (2) determines if (tooclose) or (nearaxis)
+    (3) if tooclose, correct near sheet AND 
+                     correct near axis if nearaxis
+    (4) if not tooclose but nearaxis, correct near axis 
+    (5) print values in output files
+    CALLS
+      compderiv4:   computes derivatives of densities
+      velodbleSonO: computes T_6[Q]
+                    needs values of derivatives of densities 
+                    at endpoints given by compderiv4
+      correctionqendsh: returns corrections when target point 
+                    on axis, close to interface 
+      x2cl2circ:    determines if target pt too close to interface
+      correctqnearsheetnew: returns corrections if target point 
+                    too close
+      compnearcorrBbet: computes 
+                        I[B(bet)]=T[B(bet)]+E[B(bet)]
+                        T[B(alf)], E[B(alf)]
+      findalfp:     finds basept needed for B(bet) when target 
+                    pt not near interface
+      intbq:        computes T_6[B(bet)]
+      trapbq:       computes T_6[B(alf)]
+
+compderivxy1  derivs1.h
+      call compderiv2
+
+compxy
+      call deriv3odd(hold,thetp,thetpp,thetppp,n)
+      call compvol(n,x,sp,sinthet,costhet,thetp,vol)
+
+compvol
+
+findalfp: 
+      finds basept needed for B(bet) when target pt not near interface
+      uses exact result for sphere
+
+findclosest (not used)
+      finds basept needed for B(bet) using iterative method
+
+velodbleSonO: params.h
+      computes T_6[Q]
+      CALLS
+         ellip
+         compenddv: end derivatives needed for T_6
+
+compenddv: computes contributions from end derivatives to T6
+
+trigderiv: several subroutines to compute derivatives spectrally
+      CALLS
+         dfft
+         ftrans
+
+correctionqendsh (and correctionqend)
+      computes corrections for points on axis
+      CALL
+         compallcorrend
+
+correctionqnearsheetnew (ELIMINATE!)
+      computes corrections for points near interface, not on axis
+      CALL
+         derivsqatalfpnew
+         correctionqatxnew
+
+derivsqatalfpnew
+      computes all derivatives at alfb needed for corrections
+      CALL
+         compallcoeffuys
+
+correctionqatxnew
+      CALL
+         compallcorrnew
+      FUNCTIONS
+         corrqu11
+         corrqu12
+         corrqu22
+         corrqv11
+         corrqv12
+         corrqv22
+
+compnearcorrBbet (RENAME)
+      Computes T6[Bbet]=intb T6[Balf]=trapb E_6[Bbet] E[Balf]
+      call intbq 
+      call trapbq
+      call derivsqatpBbetnew 
+      call correctionqatxnew
+
+derivsqatpBbetnew computes all derivs at alfb and betb
+      call compallcoeffuys
+
+compallcoeffuys computes coefficients of products u*xd u*yd v*xd v*yd
+
+intbq
+      computes T6[Bbet]
+      call ellip
+
+trapbq
+      computes T6[Balf]
+      call ellip
+
+compallcorrnew
+      returns corrections for all basis functions needed at interior
+      call trapcomponent
+      call allvals
+
+compallcorrend
+      returns corrections for all basis functions needed at endpts
+
+FILES
+====
+drivergrid.F contains 
+       PROGRAM     drivergrid1  (MAIN)
+       SUBROUTINE  init
+IntQgr
+       SUBROUTINE  IntQs
+       SUBROUTINE  findalfp
+       SUBROUTINE  findclosest
+       SUBROUTINE  velodbleSonO
+
+**BASICS**
+compderivxy1
+       SUBROUTINE compderivxy1
+
+compxyvol
+      subroutine compxy(n,L,sp,thet,thetp,thetpp,thetppp,y0,
+      subroutine compvol(n,x,sp,sinthet,costhet,thetp,vol)
+
+trigderiv
+       SUBROUTINE  deriv3odd
+       SUBROUTINE  deriv3even
+       SUBROUTINE  deriv1even
+       SUBROUTINE  compderiv2
+       SUBROUTINE  compderiv3
+       SUBROUTINE  compderiv1
+       SUBROUTINE  compderiv4
+ftrans
+dfft
+ellip
+
+**NEEDED FOR T6[Q]**
+compenddv
+      SUBROUTINE compenddv
+
+**NEEDED FOR CORRECTIONS NEAR INTERFACE**
+x2cl2circ
+       SUBROUTINE  x2cl2circ
+       SUBROUTINE  x2close2S (not used)
+
+correctionqend
+       SUBROUTINE  correctionqend
+       SUBROUTINE  correctionqendsh
+
+correctionqnearsheetnew
+      SUBROUTINE  correctqnearsheetnew
+      SUBROUTINE  derivsqatalfpnew
+
+correctionqatxnew
+      SUBROUTINE  correctionqatxnew
+      SUBROUTINE  compcoeffnew
+      FUNCTION  corrqu11
+      FUNCTION  corrqu12
+      FUNCTION  corrqu22
+      FUNCTION  corrqv11
+      FUNCTION  corrqv12
+      FUNCTION  corrqv22
+      FUNCTION  corrqrho4
+      FUNCTION  corrqrho2
+      FUNCTION  corrqlog
+
+compallcorrnew
+      SUBROUTINE compallcorrnew
+      SUBROUTINE allvals
+      SUBROUTINE trapcomponent
+
+compallcorrend
+      SUBROUTINE compallcorrend
+
+**NEEDED FOR CORRECTIONS NEAR AXIS**
+compnearcorrBbet (RENAME)
+      SUBROUTINE compnearcorrBbet
+      SUBROUTINE derivsqatpBbetnew
+      SUBROUTINE compallcoeffuys
+      SUBROUTINE intbq
+      SUBROUTINE trapbq
+

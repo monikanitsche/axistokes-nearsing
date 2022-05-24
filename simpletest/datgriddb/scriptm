@@ -1,0 +1,5 @@
+clear, datdb100r3,  save datd100r3
+clear, datdb200r3,  save datd200r3
+clear, datdb400r3,  save datd400r3
+clear, datdb800r3,  save datd800r3
+clear, datdb1600r4, save datd1600r4

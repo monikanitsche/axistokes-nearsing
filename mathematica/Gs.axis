@@ -1,0 +1,61 @@
+computed by expanding in terms of alf *)
+
+delr = r-r0
+sumr = r+r0
+
+rho2sq = xi^2 + sumr^2
+k2 = 4*r*r0/rho2sq
+k2=Simplify[%]
+
+a[n_] := ((2*n-1)!! /(2^n*n!) )^2
+b[n_] := -((2*n-1)!! /(2^n*n!) )^2/(2*n-1)
+arg = k2
+
+f=Pi/2*      (  1     + a[1] *arg    + a[2 ]*arg^2  + a[3] *arg^3  +
+         a[4] *arg^4  + a[5] *arg^5  + a[6 ]*arg^6  + a[7] *arg^7  +
+         a[8] *arg^8  + a[9] *arg^9  + a[10]*arg^10 + a[11]*arg^11 +
+         a[12]*arg^12 + a[13]*arg^13 + a[14]*arg^14 + a[15]*arg^15 )
+
+e=Pi/2*       (  1    + b[1] *arg    + b[2 ]*arg^2  + b[3] *arg^3  +
+         b[4] *arg^4  + b[5] *arg^5  + b[6 ]*arg^6  + b[7] *arg^7  +
+         b[8] *arg^8  + b[9] *arg^9  + b[10]*arg^10 + b[11]*arg^11 +
+         b[12]*arg^12 + b[13]*arg^13 + b[14]*arg^14 + b[15]*arg^15 )
+
+(* define eth=E_{3/2}, e5h=E_{5/2}, A=A1^2, B=B1^2, C, as in Aino's thesis
+Note: A and B are redefined as the square of Aino's *)
+
+m3 = 1-k2
+eth =Series[e/m3,{r0,0,8}] 
+aa=Series[r0^2+r^2+xi^2,{r0,0,8}]
+bb=Series[2*r*r0,{r0,0,8}]
+cc=Series[Sqrt[ sumr^2 + xi^2 ],{r0,0,8}]
+
+i10=4*f/cc /. {r0->0}
+i11=Simplify[4/(bb*cc)*(aa*f-cc^2*e)  ]
+i30=Simplify[4*eth/cc^3 ]
+i31=Simplify[4/(bb*cc^3)*(aa*eth-f*cc^2)  ]
+i32=Simplify[4/(bb^2*cc^3)*(aa^2*eth-2*aa*cc^2*f+cc^4*e) ]
+
+m11=Simplify[r*( i11 + (r^2+r0^2)*i31 - r*r0*(i30+i32) ) /. {r0->0} ]
+m12=Simplify[r*( xi*(r*i31-r0*i30) )  /. {r0->0} ]
+m21=Simplify[r*xi*(r*i30-r0*i31)   /. {r0->0} ]
+m22=Simplify[r*( i10 + xi^2*i30 ) /. {r0->0} ]
+
+
+Simplify[m11]  Ouput: 0
+Simplify[m12]  Ouput: 0
+Simplify[m21]  
+                     2
+          2 xi Pi r
+Out[29]= ---------------
+            2    2 3/2
+         (xi  + r )
+
+Simplify[m22]  
+                       2    2
+         2 Pi r (2 xi  + r )
+Out[30]= ---------------------
+               2    2 3/2
+            (xi  + r )
+
+

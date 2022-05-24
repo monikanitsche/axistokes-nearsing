@@ -1,0 +1,517 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 MAY 2022 10:48
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**summary-test-dble
+(./summary-test-dble.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(./header.tex (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks16
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2016/06/07 v1.8
+
+Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
+\TP@textbox=\box28
+\TPHorizModule=\dimen114
+\TPVertModule=\dimen115
+\TP@margin=\dimen116
+\TP@absmargin=\dimen117
+Grid set 16 x 16 = 38.39343pt x 49.68562pt
+\TPboxrulesize=\dimen118
+\TP@tbargs=\toks21
+\TP@prevdepth=\dimen119
+))
+
+LaTeX Warning: Unused global option(s):
+    [subeqn].
+
+No file summary-test-dble.aux.
+\openout1 = `summary-test-dble.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen120
+\scratchbox=\box29
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen121
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+pdfTeX warning: pdflatex (file ./figs/fig100a3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig100a3.pdf, id=1, 563.10374pt x 422.57875pt>
+File: figs/fig100a3.pdf Graphic file (type pdf)
+<use figs/fig100a3.pdf>
+Package pdftex.def Info: figs/fig100a3.pdf  used on input line 7.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig100b3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig100b3.pdf, id=3, 563.10374pt x 422.57875pt>
+File: figs/fig100b3.pdf Graphic file (type pdf)
+<use figs/fig100b3.pdf>
+Package pdftex.def Info: figs/fig100b3.pdf  used on input line 8.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig100c3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig100c3.pdf, id=5, 563.10374pt x 422.57875pt>
+File: figs/fig100c3.pdf Graphic file (type pdf)
+<use figs/fig100c3.pdf>
+Package pdftex.def Info: figs/fig100c3.pdf  used on input line 9.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig200a3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig200a3.pdf, id=7, 563.10374pt x 422.57875pt>
+File: figs/fig200a3.pdf Graphic file (type pdf)
+<use figs/fig200a3.pdf>
+Package pdftex.def Info: figs/fig200a3.pdf  used on input line 10.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig200b3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig200b3.pdf, id=9, 563.10374pt x 422.57875pt>
+File: figs/fig200b3.pdf Graphic file (type pdf)
+<use figs/fig200b3.pdf>
+Package pdftex.def Info: figs/fig200b3.pdf  used on input line 11.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig200c3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig200c3.pdf, id=11, 563.10374pt x 422.57875pt>
+File: figs/fig200c3.pdf Graphic file (type pdf)
+<use figs/fig200c3.pdf>
+Package pdftex.def Info: figs/fig200c3.pdf  used on input line 12.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig400a3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig400a3.pdf, id=13, 563.10374pt x 422.57875pt>
+File: figs/fig400a3.pdf Graphic file (type pdf)
+<use figs/fig400a3.pdf>
+Package pdftex.def Info: figs/fig400a3.pdf  used on input line 13.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig400b3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig400b3.pdf, id=15, 563.10374pt x 422.57875pt>
+File: figs/fig400b3.pdf Graphic file (type pdf)
+<use figs/fig400b3.pdf>
+Package pdftex.def Info: figs/fig400b3.pdf  used on input line 14.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig400c3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig400c3.pdf, id=17, 563.10374pt x 422.57875pt>
+File: figs/fig400c3.pdf Graphic file (type pdf)
+<use figs/fig400c3.pdf>
+Package pdftex.def Info: figs/fig400c3.pdf  used on input line 15.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig800a3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig800a3.pdf, id=19, 563.10374pt x 422.57875pt>
+File: figs/fig800a3.pdf Graphic file (type pdf)
+<use figs/fig800a3.pdf>
+Package pdftex.def Info: figs/fig800a3.pdf  used on input line 16.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig800b3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig800b3.pdf, id=21, 563.10374pt x 422.57875pt>
+File: figs/fig800b3.pdf Graphic file (type pdf)
+<use figs/fig800b3.pdf>
+Package pdftex.def Info: figs/fig800b3.pdf  used on input line 17.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig800c3.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig800c3.pdf, id=23, 563.10374pt x 422.57875pt>
+File: figs/fig800c3.pdf Graphic file (type pdf)
+<use figs/fig800c3.pdf>
+Package pdftex.def Info: figs/fig800c3.pdf  used on input line 18.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 6--19
+[] [] [] 
+ []
+
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 6--19
+[] [] [] 
+ []
+
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 6--19
+[] [] [] 
+ []
+
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 6--19
+[] [] [] 
+ []
+
+[1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figs/
+fig100a3.pdf> <./figs/fig100b3.pdf> <./figs/fig100c3.pdf> <./figs/fig200a3.pdf>
+ <./figs/fig200b3.pdf> <./figs/fig200c3.pdf> <./figs/fig400a3.pdf> <./figs/fig4
+00b3.pdf> <./figs/fig400c3.pdf> <./figs/fig800a3.pdf> <./figs/fig800b3.pdf> <./
+figs/fig800c3.pdf>]
+
+pdfTeX warning: pdflatex (file ./figs/fig100a4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig100a4.pdf, id=120, 563.10374pt x 422.57875pt>
+File: figs/fig100a4.pdf Graphic file (type pdf)
+<use figs/fig100a4.pdf>
+Package pdftex.def Info: figs/fig100a4.pdf  used on input line 29.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig100b4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig100b4.pdf, id=122, 563.10374pt x 422.57875pt>
+File: figs/fig100b4.pdf Graphic file (type pdf)
+<use figs/fig100b4.pdf>
+Package pdftex.def Info: figs/fig100b4.pdf  used on input line 30.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig100c4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig100c4.pdf, id=124, 563.10374pt x 422.57875pt>
+File: figs/fig100c4.pdf Graphic file (type pdf)
+<use figs/fig100c4.pdf>
+Package pdftex.def Info: figs/fig100c4.pdf  used on input line 31.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig200a4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig200a4.pdf, id=126, 563.10374pt x 422.57875pt>
+File: figs/fig200a4.pdf Graphic file (type pdf)
+<use figs/fig200a4.pdf>
+Package pdftex.def Info: figs/fig200a4.pdf  used on input line 32.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig200b4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig200b4.pdf, id=128, 563.10374pt x 422.57875pt>
+File: figs/fig200b4.pdf Graphic file (type pdf)
+<use figs/fig200b4.pdf>
+Package pdftex.def Info: figs/fig200b4.pdf  used on input line 33.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig200c4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig200c4.pdf, id=130, 563.10374pt x 422.57875pt>
+File: figs/fig200c4.pdf Graphic file (type pdf)
+<use figs/fig200c4.pdf>
+Package pdftex.def Info: figs/fig200c4.pdf  used on input line 34.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig400a4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig400a4.pdf, id=132, 563.10374pt x 422.57875pt>
+File: figs/fig400a4.pdf Graphic file (type pdf)
+<use figs/fig400a4.pdf>
+Package pdftex.def Info: figs/fig400a4.pdf  used on input line 35.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig400b4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig400b4.pdf, id=134, 563.10374pt x 422.57875pt>
+File: figs/fig400b4.pdf Graphic file (type pdf)
+<use figs/fig400b4.pdf>
+Package pdftex.def Info: figs/fig400b4.pdf  used on input line 36.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig400c4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig400c4.pdf, id=136, 563.10374pt x 422.57875pt>
+File: figs/fig400c4.pdf Graphic file (type pdf)
+<use figs/fig400c4.pdf>
+Package pdftex.def Info: figs/fig400c4.pdf  used on input line 37.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig800a4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig800a4.pdf, id=138, 563.10374pt x 422.57875pt>
+File: figs/fig800a4.pdf Graphic file (type pdf)
+<use figs/fig800a4.pdf>
+Package pdftex.def Info: figs/fig800a4.pdf  used on input line 38.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig800b4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig800b4.pdf, id=140, 563.10374pt x 422.57875pt>
+File: figs/fig800b4.pdf Graphic file (type pdf)
+<use figs/fig800b4.pdf>
+Package pdftex.def Info: figs/fig800b4.pdf  used on input line 39.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+
+pdfTeX warning: pdflatex (file ./figs/fig800c4.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<figs/fig800c4.pdf, id=142, 563.10374pt x 422.57875pt>
+File: figs/fig800c4.pdf Graphic file (type pdf)
+<use figs/fig800c4.pdf>
+Package pdftex.def Info: figs/fig800c4.pdf  used on input line 40.
+(pdftex.def)             Requested size: 180.67499pt x 146.86903pt.
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 28--41
+[] [] [] 
+ []
+
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 28--41
+[] [] [] 
+ []
+
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 28--41
+[] [] [] 
+ []
+
+
+Overfull \hbox (77.13664pt too wide) in paragraph at lines 28--41
+[] [] [] 
+ []
+
+[2 <./figs/fig100a4.pdf> <./figs/fig100b4.pdf> <./figs/fig100c4.pdf> <./figs/fi
+g200a4.pdf> <./figs/fig200b4.pdf> <./figs/fig200c4.pdf> <./figs/fig400a4.pdf> <
+./figs/fig400b4.pdf> <./figs/fig400c4.pdf> <./figs/fig800a4.pdf> <./figs/fig800
+b4.pdf> <./figs/fig800c4.pdf>] (./summary-test-dble.aux) ) 
+Here is how much of TeX's memory you used:
+ 2547 strings out of 492649
+ 35230 string characters out of 6129622
+ 95627 words of memory out of 5000000
+ 6373 multiletter control sequences out of 15000+600000
+ 12741 words of font info for 49 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,5n,27p,280b,132s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on summary-test-dble.pdf (2 pages, 2643695 bytes).
+PDF statistics:
+ 251 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+

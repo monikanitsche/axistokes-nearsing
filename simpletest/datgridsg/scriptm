@@ -1,0 +1,5 @@
+clear, datsg100r4tot,  save dats100r4tot
+clear, datsg200r4tot,  save dats200r4tot
+clear, datsg400r4tot,  save dats400r4tot
+clear, datsg800r4tot,  save dats800r4tot
+clear, datsg1600r4tot, save dats1600r4tot

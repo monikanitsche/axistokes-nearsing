@@ -1,0 +1,238 @@
+*     FAST FOURIER TRANSFORM  (COMPLEX)
+*     DOUBLE PRECISION
+************************************************************************
+
+#include "flags.h"
+
+C NAASA  5.1.003 DFFT     FTN-A 10-29-75     THE UNIV OF MICH COMP CTR
+      SUBROUTINE DFFT (N,Z,SIGN,SV)
+C
+C REPLACES THE COMPLEX VECTOR S(0)...S(N-1) BY ITS DISCRETE FOURIER
+C TRANSFORM, I.E.,
+C
+C    S(J) = SUM(K=0,N-1) S(K) * EXP( SIGN * (2*PI*I) * J*K/N )
+C
+C WHERE SIGN=+1/-1, PI=3.14159..., AND I IS THE IMAGINARY UNIT.
+C IF THE DISCRETE FOURIER TRANSFORM IS DENOTED BY F(SIGN), THEN
+C F(SIGN) IS A LINEAR TRANSFORMATION AND FOR ALL VECTORS S
+C
+C      F(+1) ( F(-1) S ) = F(-1) ( F(+1) S ) = N * S .
+C
+C THIS SUBROUTINE EMPLOYS A VERSION OF THE COOLEY-TUKEY (1965), OR
+C FAST FOURIER TRANSFORM (FFT), ALGORITHM AND IS BASED ON THE SUB-
+C ROUTINE FOURG (BRENNER 1968).
+C
+      INTEGER N, SIGN
+      MODE Z(1), SV(1)
+C
+C   N   -> LENGTH OF THE COMPLEX VECTOR S. IF N IS LESS THAN 2,
+C          NO COMPUTATIONS ARE PERFORMED.  THERE ARE TWO RES-
+C          TRICTIONS ON N: (1) FLOAT(N) MUST BE EXACTLY REPRES-
+C          ENTABLE IN THE PRECISION OF THE DATA, AND (2) N MUST
+C          NOT CONTAIN MORE THAN 23 PRIME FACTORS.
+C   Z   -- (INPUT) REAL VECTOR OF LENGTH 2*N CONTAINING THE ELEMENTS
+C          OF THE COMPLEX VECTOR S TO BE TRANSFORMED. (OUTPUT) THE
+C          DISCRETE FOURIER TRANSFORM OF S.  THE REAL VECTOR Z
+C          DEFINES THE COMPLEX VECTOR S ACCORDING TO THE RULE THAT
+C               S(J) = Z(2*J+1) + I * Z(2*J+2),     J=0...N-1.
+C          IN IBM FORTRAN G AND H, THIS STORAGE ARRANGEMENT MAY BE
+C          OBTAINED BY DECLARING " COMPLEX*16 Z(N) ", WHICH WILL
+C          PROVIDE THE CORRESSPONDENCE
+C                    S(J-1)  <->  Z(J),     J=1...N.
+C  SIGN -> THE SIGN OF THE FOURIER TRANSFORM (SEE THE DEFINITION
+C          ABOVE). THE MAGNITUDE OF THIS ARGUMENT IS NOT INSPECTED.
+C   SV  <- REAL VECTOR OF LENGTH 2*N REQUIRED FOR SCRATCH STORAGE.
+C
+      INTEGER BLK, K, KB, KJ, KK, KL, KREV, K0, SPAN
+      INTEGER L, NF, N2, IFACT(24)
+      MODE PSR, PSI, EPSR, EPSI, WR, WI, EWR, EWI
+      MODE FBLK, TWOPI, THETA, TA, TR, TI
+C 2 * PI = 6.2831 85307 17958 64769 23286
+      DATA TWOPI/6.2831 85307 17958 64769 25286 76631Q0/
+c      DATA TWOPI/6.2831 85307 17958 64769 25286 76631/
+C
+C FACTOR N. IF N=F(1)*...*F(L), THEN THE MIXED-RADIX REPRESENTATION
+C OF THE INDEX K TAKES THE FORM K=/D(1)...D(L), WHERE THE DIGIT D(J)
+C MAY ASSUME THE VALUES 0...F(J)-1. THUS
+C      K = D(1)*(F(2)*...*F(L)) + ... + D(L-1)*F(L) + D(L).
+C THE TRANSFORMATION IS THEN REPRESENTED IN FACTORED FORM AS W(1)..
+C ..W(L)R, WHERE R IS A MIXED-RADIX DIGIT-REVERSAL MAPPING AND W(J)
+C IS COMPOSED OF N/F(J) MUTUALLY DISJOINT FOURIER TRANSFORMS OF
+C ORDER F(J) TOGETHER WITH APPROPRIATE PHASE SHIFTS. THE FACTOR-
+C IZATION OF N IS RETAINED IN THE FORM IFACT(J)=2*F(1)*...*F(J-1),
+C J=2...L+1.
+C
+      N2 = N
+      IF ( N2 .LE. 1 ) RETURN
+      L = 0
+      IFACT(1) = 2
+      KK = 2
+ 8100     KJ = N2 / KK
+          IF ( KJ * KK .NE. N2 ) GO TO 8110
+            L = L + 1
+            IFACT(L+1) = IFACT(L) * KK
+            N2 = KJ
+            GO TO 8120
+ 8110     CONTINUE
+            IF ( KK .EQ. 2 ) KK = 1
+            KK = KK + 2
+            IF ( KK .GT. KJ ) KK = N2
+ 8120     CONTINUE
+          IF ( N2 .NE. 1 ) GO TO 8100
+      N2 = IFACT(L+1)
+C
+C FORM SV=RZ, WHERE R IS A MIXED-RADIX DIGIT-REVERSAL MAPPING.
+C BY DEFINITION, K(REV)=/D(L)...D(1)/, SO THAT
+C    K(REV) = D(L)*(F(1)*...*F(L-1) + ... + D(2)*F(1) + D(1).
+C NOTE THAT IFACT(J) CONTAINS 2 TIMES THE PLACE VALUE OF THE
+C J-TH DIGIT. FOR K=0...N-1, K(REV) IS COMPUTED BY ADDING 1 TO
+C D(L) AND PROPAGATING THE CARRIES TO THE RIGHT. THE NUMBER AND
+C DEPTH OF THESE CARRIES IS MINIMIZED BY THE REPRESENTATION CHOSEN.
+C
+      IF ( L .EQ. 1) GO TO 8230
+        BLK = IFACT(L)
+        KREV = 1 - BLK
+        DO 8220 K = 1, N2, 2
+C COMPUTE THE CURRENT VALUE OF KREV BY ADDING 1 TO THE HIGH
+C ORDER DIGIT POSITION WITH CARRIES PROPAGATING TO THE RIGHT.
+            KK = L
+            KREV = KREV + BLK
+ 8200       IF ( KREV .LT. IFACT(KK+1) ) GO TO 8210
+                KREV = KREV - IFACT(KK+1) + IFACT(KK-1)
+                KK = KK - 1
+                GO TO 8200
+ 8210       CONTINUE
+            SV(K) = Z(KREV)
+            SV(K+1) = Z(KREV+1)
+ 8220   CONTINUE
+        GO TO 8250
+ 8230 CONTINUE
+        DO 8240 K = 1, N2, 2
+            SV(K) = Z(K)
+ 8240       SV(K+1) = Z(K+1)
+ 8250 CONTINUE
+C
+C FOR I = L...1 APPLY A PHASE SHIFTED TRANSFORM OF ORDER F(I) TO
+C THE H=1*...*F(I-1) VECTORS IN EACH BLOCK OF N/H*F(I) ELEMENTS,
+C WHERE THE H VECTORS IN A BLOCK ARE OBTAINED BY TAKING EVERY
+C H-TH ELEMENT WITHIN THE BLOCK.
+C
+C     STAGE            1          2                 L
+C     ORDER OF
+C      TRANSFORM      F(L)      F(L-1)             F(1)
+C     SPAN BETWEEN
+C      ELEMENTS        1         F(L)         F(L)*...*F(2)
+C     SIZE OF A
+C      BLOCK          F(L)      F(L)*..             N
+C                                ..*F(L-1)
+C
+C FOR THE PHASE-SHIFT ANGLE THETA, THE SUCCESSIVE POWERS W**K =
+C EXP(K*THETA) ARE REQUIRED.  THESE POWERS ARE COMPUTED BY SIMPLE
+C POWERING WITH APPROPRIATE REORTHOGONALIZATION.  THUS IF W**(K-1) =
+C (PSR,PSI) AND W = (EPSR,EPSI), THEN W**K IS COMPUTED BY FORMING
+C        T = W * (W**(K-1)) = (PSR,PSI) * (EPSR,EPSI)
+C AND THEN W**K = T * (.5 * (3. - /T/ **2)), WHERE THE EXPRESSION
+C IN PARENTHESES DENOTES A SQUARE-ROOT AND DIVISION FREE APPROX-
+C IMATION TO /T/ **-1.  IN THE CONTEXT OF CHOPPED ARITHMETIC, THIS
+C EXTRAPOLATION ALGORITHM APPEARS TO PROVIDE THE MOST ACCURATE
+C TRANSFORM (SEE SINGLETON (1967) FOR OTHER EXTRAPOLATION METHODS).
+C
+      THETA = TWOPI
+      IF ( SIGN .LT. 0 ) THETA = -THETA
+      FBLK = 1
+      NF = 1
+      SPAN = 2
+ 8400     KK = IFACT(L+1) / IFACT(L)
+          BLK = SPAN * KK
+          FBLK = FBLK * FLOAT(KK)
+C COMPUTE THE EXTRAPOLATION COEFFICIENTS FOR THE PHASE SHIFT
+          IF ( SPAN .EQ. 2) GO TO 8410
+            EPSR = THETA / FBLK
+            EPSI = SIN(EPSR)
+            EPSR = COS(EPSR)
+ 8410     CONTINUE
+          PSR = 1
+          PSI = 0
+          IF ( KK .GT. 2 ) GO TO 8800
+C 2-ND ORDER PHASE-SHIFTED FOURIER TRANSFORM
+            IF ( SPAN .NE. 2 ) GO TO 8510
+              DO 8500 K = 1, N2, 2
+                  Z(K) = SV(K)
+ 8500             Z(K+1) = SV(K+1)
+ 8510       CONTINUE
+            DO 8540 KB = 1, SPAN, 2
+                IF ( KB .EQ. 1 ) GO TO 8520
+                  TR = PSR * EPSR - PSI * EPSI
+                  TI = PSR * EPSI + PSI * EPSR
+                  TA = (3 - (TR * TR + TI * TI))/2
+                  PSR = TA * TR
+                  PSI = TA * TI
+ 8520           CONTINUE
+                DO 8530 K0 = KB, N2, BLK
+                    KK =K0 + SPAN
+                    TR = Z(KK) * PSR - Z(KK+1) * PSI
+                    TI = Z(KK) * PSI + Z(KK+1) * PSR
+                    Z(KK) = Z(K0) - TR
+                    Z(K0) = Z(K0) + TR
+                    Z(KK+1) = Z(K0+1) - TI
+                    Z(K0+1) = Z(K0+1) + TI
+ 8530           CONTINUE
+ 8540       CONTINUE
+            GO TO 8900
+C KK-TH ORDER PHASE-SHIFTED FOURIER TRANSFORM, KK > 2.
+ 8800     CONTINUE
+            IF ( NF .EQ. KK ) GO TO 8810
+              NF = KK
+              EWR = THETA / FLOAT(NF)
+              EWI = SIN(EWR)
+              EWR = COS(EWR)
+ 8810       CONTINUE
+            DO 8860 KB = 1, SPAN, 2
+                IF ( KB .EQ. 1 ) GO TO 8820
+                  TR = PSR * EPSR - PSI * EPSI
+                  TI = PSR * EPSI + PSI * EPSR
+                  TA = (3 - (TR * TR + TI * TI))/2
+                  PSR = TA * TR
+                  PSI = TA * TI
+ 8820           CONTINUE
+                DO 8850 K0 = KB, N2, BLK
+                    WR = PSR
+                    WI = PSI
+                    KL = K0 + BLK - SPAN
+                    DO 8840 KK = K0, KL, SPAN
+                        TR = SV(KL)
+                        TI = SV(KL+1)
+                        KJ = KL
+ 8830                       KJ = KJ - SPAN
+                            TA = TR
+                            TR = SV(KJ) + (TA * WR - TI * WI)
+                            TI = SV(KJ+1) + (TA * WI + TI * WR)
+                            IF ( KJ .GT. K0 ) GO TO 8830
+                        Z(KK) = TR
+                        Z(KK+1) = TI
+                        TA = WR
+                        WR = TA * EWR - WI * EWI
+                        WI = TA * EWI + WI * EWR
+ 8840               CONTINUE
+ 8850           CONTINUE
+ 8860       CONTINUE
+ 8900     CONTINUE
+C
+          IF ( L .LE. 1 ) RETURN
+          L = L - 1
+          SPAN = BLK
+          DO 8910 K = 1, N2, 2
+              SV(K) = Z(K)
+ 8910         SV(K+1) = Z(K+1)
+          GO TO 8400
+      end
+C
+C BRENNER,N.M. 1968. FAST FOURIER TRANSFORM--FOURG. IBM CONTRIBUTED
+C   PROGRAM LIBRARY, 360D-13.4.005.
+C COOLEY,J.W., AND TUKEY,J.W. 1965. AN ALGORITHM FOR THE MACHINE
+C   CALCULATION OF COMPLEX FOURIER SERIES. MATH. COMP. 19, 90,
+C   297-301.
+C SINGLETON,R.C. 1967. ON COMPUTING THE FAST FOURIER TRANSFORM.
+C   COMM. ACM 10, 10, 647-654.
+C                       THE UNIVERSITY OF MICHIGAN COMPUTING CENTER
+C                       NUMERICAL ANALYSIS LIBRARY - SEPTEMBER 1975

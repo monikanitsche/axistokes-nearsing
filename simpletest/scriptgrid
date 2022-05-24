@@ -1,0 +1,7 @@
+# \rm datglobn*.m
+make drivergrid.out
+./drivergrid.out < datinl100
+./drivergrid.out < datinl200
+./drivergrid.out < datinl400
+./drivergrid.out < datinl800
+./drivergrid.out < datinl1600
