@@ -29,18 +29,31 @@ Notes:
 
 2) The variables in the code and the mathematica files, due to historical reasons, dont quite match those in the paper.
 For example
+
 Paper  Code
+
 u       v
+
 v       u
+
 r       r or x
+
 z       z or y
+
 Q111    Qv22
+
 Q112    Qv21
+
 Q222    Qu11
+
 M11     M22
+
 M12     M21
+
 f1      f2
+
 f2      f1
+
 
 3) the given code only resolves the flow in the left half of the sphere, as shown in the figure in paper
 (the correction near the point that meets the axis at alf=pi is not included in this code)
