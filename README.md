@@ -16,11 +16,12 @@ FOURTH for fourth order method
 (other flags can be ignored, QUAD was used to test round off error issues, which are now resolved)
 
 % make driver.out
+
 % driver.out < datinfile
 
 where datinfile is one of datinl100, datinl200, datinl400, datinl800, datinl1600
 This creates dat.m files in the corresponding subdirectories.
-These are read into matlab and save as dat.mat files
+These are read into matlab and saved as dat.mat files
 which are then plotted by the plotting routines in the given subdirectories.
 
 --------------------------------------------------------------
