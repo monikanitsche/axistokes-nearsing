@@ -32,27 +32,27 @@ For example
 
 Paper  Code
 
-u       v
+u     ->  v
 
-v       u
+v     ->  u
 
-r       r or x
+r     ->  r or x
 
-z       z or y
+z      -> z or y
 
-Q111    Qv22
+Q111   -> Qv22
 
-Q112    Qv21
+Q112   -> Qv21
 
-Q222    Qu11
+Q222  ->  Qu11
 
-M11     M22
+M11   ->  M22
 
-M12     M21
+M12   ->  M21
 
-f1      f2
+f1    ->  f2
 
-f2      f1
+f2    ->  f1
 
 
 3) the given code only resolves the flow in the left half of the sphere, as shown in the figure in paper
